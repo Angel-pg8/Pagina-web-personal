@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ángel | Portafolio</title>
   <meta name="description" content="Landing page personal de Ángel: tecnología, ingeniería, programación y proyectos.">
+  <link rel="icon" href="Assets/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add("js");</script>
   <style>
     /* =========================
@@ -200,64 +201,35 @@
       background: var(--white);
       border: 1px solid rgba(255, 255, 255, 0.24);
       overflow: hidden;
+      display: grid;
+      place-items: center;
     }
 
     .brand-logo {
       width: 42px;
       height: 42px;
+      padding: 7px;
     }
 
     .hero-logo {
       width: clamp(9rem, 22vw, 17rem);
       height: clamp(9rem, 22vw, 17rem);
+      padding: clamp(1rem, 3vw, 1.85rem);
       box-shadow: 0 34px 90px rgba(0, 0, 0, 0.44);
     }
 
-    .brand-logo::before,
-    .brand-logo::after,
-    .hero-logo::before,
-    .hero-logo::after {
-      content: "";
-      position: absolute;
-      background: var(--black);
-      clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
-      transform: rotate(30deg);
-    }
-
-    .brand-logo::before {
-      width: 27px;
-      height: 31px;
-      left: 7px;
-      top: 4px;
-    }
-
-    .brand-logo::after {
-      width: 27px;
-      height: 31px;
-      right: 7px;
-      bottom: 4px;
-    }
-
-    .hero-logo::before {
-      width: 56%;
-      height: 64%;
-      left: 13%;
-      top: 8%;
-    }
-
-    .hero-logo::after {
-      width: 56%;
-      height: 64%;
-      right: 13%;
-      bottom: 8%;
+    .brand-logo img,
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .logo-slot {
-      position: absolute;
-      inset: 0;
+      width: 100%;
+      height: 100%;
       display: grid;
       place-items: center;
-      color: transparent;
     }
 
     .nav-links {
@@ -297,6 +269,14 @@
     .nav-links a:focus-visible::after {
       transform: scaleX(1);
       transform-origin: left;
+    }
+
+    .nav-cv {
+      display: inline-flex;
+      min-height: 2.45rem;
+      padding: 0.72rem 0.95rem;
+      font-size: 0.86rem;
+      white-space: nowrap;
     }
 
     /* =========================
@@ -872,8 +852,20 @@
         display: none;
       }
 
+      .brand-logo {
+        width: 38px;
+        height: 38px;
+        padding: 6px;
+      }
+
       .btn {
         width: 100%;
+      }
+
+      .nav-cv {
+        width: auto;
+        min-height: 2.4rem;
+        padding: 0.68rem 0.82rem;
       }
 
       .contact-links a {
@@ -902,9 +894,9 @@
   <header class="site-header" id="siteHeader">
     <nav class="nav" aria-label="Navegación principal">
       <a class="brand focusable" href="#hero" aria-label="Ir al inicio">
-        <span class="brand-logo" aria-hidden="true">
-        <span class="logo-slot">Logo Ángel</span>
-      </span>
+        <span class="brand-logo">
+          <span class="logo-slot"><img src="Assets/logo.svg" alt="Logo Ángel"></span>
+        </span>
         <span class="brand-text">Ángel</span>
       </a>
       <div class="nav-links" aria-label="Secciones">
@@ -913,6 +905,7 @@
         <a href="#portafolio">Portafolio</a>
         <a href="#contacto">Contacto</a>
       </div>
+      <a class="btn nav-cv" href="Assets/cv.pdf" download>Descargar CV</a>
     </nav>
   </header>
 
@@ -926,12 +919,12 @@
           <p class="hero-meta">Estudiante de El Salvador explorando electrónica, diseño y software con mentalidad de construcción.</p>
           <div class="btn-row">
             <a class="btn btn--solid" href="#portafolio">Ver portafolio</a>
-            <a class="btn" href="CV_Angel.pdf" download>Descargar CV</a>
+            <a class="btn" href="Assets/cv.pdf" download>Descargar CV</a>
           </div>
         </div>
         <div class="hero-mark reveal" aria-label="Logo geométrico de Ángel">
           <div class="hero-logo" aria-hidden="true">
-            <span class="logo-slot">Contenedor para logo final</span>
+            <span class="logo-slot"><img src="Assets/logo.svg" alt=""></span>
           </div>
         </div>
       </div>
@@ -1087,7 +1080,7 @@
           <a href="https://github.com/placeholder" target="_blank" rel="noreferrer">GitHub</a>
         </div>
         <div class="btn-row">
-          <a class="btn btn--dark" href="CV_Angel.pdf" download>Descargar CV / portafolio</a>
+          <a class="btn btn--dark" href="Assets/cv.pdf" download>Descargar CV / portafolio</a>
         </div>
       </div>
     </section>
